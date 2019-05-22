@@ -10,7 +10,7 @@ For all beginners/semi-pro, this is perfect repository to start-off with an angu
 
 ## NOTE
 
-Once you run the application, you would be able to see the UI pages for Creating, Updating, Searching and Deleting Employees but it won't show any Employee data. You still need to deploy the EMS REST API Service which is being consumed by this application. I have already uploaded EMS REST API Service as an individual repository https://github.com/darkerror96/semi-ems_rest_api. Clone or Download the repository from given link and deploy it in any Java IDE. Once deployed, refresh the EMS Angular Web Application to see the magic.
+Once you run the application, you would be able to see the UI pages for Creating, Updating, Searching and Deleting Employees but it won't show any Employee data. You still need to deploy the EMS REST API Service which is being consumed by this application. I have already uploaded EMS REST API Service as an individual repository https://github.com/darkerror96/semi-ems_rest_api. Clone or Download the repository from given link and deploy it in any Java IDE. Once deployed, refresh the EMS Angular Web Page to see the magic.
 
 ## Development server
 
