@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-// import { homedir } from 'os';
 
 @Component({
   selector: 'app-root',
