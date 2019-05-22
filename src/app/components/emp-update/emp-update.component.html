@@ -1,0 +1,295 @@
+<form [formGroup]="empForm" (ngSubmit)="onSubmit()">
+    <mat-vertical-stepper #linearVerticalStepper="matVerticalStepper" formArrayName="empArray" [linear]="true">
+
+        <mat-step formGroupName="0" [stepControl]="empArray?.get([0])">
+            <ng-template matStepLabel>
+                <p>Edit your Basic Details
+                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="add fas fa-user-tag"></i></p>
+            </ng-template>
+            <mat-form-field>
+                <mat-label>First Name Last Name</mat-label>
+                <input type="text" matInput formControlName="name" required>
+                <mat-error>Name field must have 2 to 20 characters</mat-error>
+            </mat-form-field>
+            <br>
+            <br>
+            Select Age : <mat-slider formControlName="age" thumbLabel tickInterval="1000" min="18" max="65">
+            </mat-slider>
+            <br>
+            <br>
+            Select Gender :
+            <mat-radio-group formControlName="gender" required>
+                <mat-radio-button *ngFor="let gender of genders" [value]="gender.value">
+                    {{gender.name}}
+                </mat-radio-button>
+            </mat-radio-group>
+            <br>
+            <br>
+            <div>
+                <button type="button" mat-button matStepperNext mat-raised-button color="primary">
+                    Next<mat-icon>navigate_next</mat-icon>
+                </button>
+            </div>
+        </mat-step>
+
+        <mat-step formGroupName="1" [stepControl]="empArray?.get([1])">
+            <ng-template matStepLabel>
+                <p>Edit your Contact Details
+                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="add fas fa-id-card"></i></p>
+            </ng-template>
+            <mat-form-field>
+                <mat-label>Contact No</mat-label>
+                <input type="number" matInput formControlName="contactNo" required>
+                <mat-error>Contact No must be 10 digits</mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Social Security Number</mat-label>
+                <input type="number" matInput formControlName="ssn" required>
+                <mat-error>SSN must be 9 digits</mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Email address</mat-label>
+                <input type="text" matInput formControlName="email" required>
+                <mat-error>Invalid Email Address Pattern</mat-error>
+            </mat-form-field>
+            <br>
+            <br>
+            <div>
+                <button type="button" mat-button matStepperPrevious mat-raised-button color="primary">
+                    <mat-icon>navigate_before</mat-icon>Back
+                </button>&nbsp;
+                <button type="button" mat-button matStepperNext mat-raised-button color="primary">Next<mat-icon>
+                        navigate_next
+                    </mat-icon></button>
+            </div>
+        </mat-step>
+
+        <mat-step formGroupName="2" [stepControl]="empArray?.get([2])">
+            <ng-template matStepLabel>
+                <p>Edit your Home Address Details
+                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="add fas fa-home"></i></p>
+            </ng-template>
+            <mat-form-field>
+                <mat-label>Street Address</mat-label>
+                <input type="text" matInput formControlName="hstreetAddress" required>
+                <mat-error>Street Address is required</mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>City</mat-label>
+                <input type="text" matInput formControlName="hcity" required>
+                <mat-error>City is required</mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>State</mat-label>
+                <input type="text" matInput formControlName="hstate" required>
+                <mat-error>State is required</mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Country</mat-label>
+                <input type="text" matInput formControlName="hcountry" required>
+                <mat-error>Country is required</mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Zip Code</mat-label>
+                <input type="number" matInput formControlName="hzipCode" required>
+                <mat-error>ZipCode must be 5 digits</mat-error>
+            </mat-form-field>
+            <br>
+            <br>
+            <div>
+                <button type="button" mat-button matStepperPrevious mat-raised-button color="primary">
+                    <mat-icon>navigate_before</mat-icon>Back
+                </button>&nbsp;
+                <button type="button" mat-button matStepperNext mat-raised-button color="primary">Next<mat-icon>
+                        navigate_next
+                    </mat-icon></button>
+            </div>
+        </mat-step>
+
+        <mat-step formGroupName="3" [stepControl]="empArray?.get([3])">
+            <ng-template matStepLabel>
+                <p>Edit your Work Address Details
+                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="add fas fa-building"></i></p>
+            </ng-template>
+            <mat-form-field>
+                <mat-label>Street Address</mat-label>
+                <input type="text" matInput formControlName="wstreetAddress" required>
+                <mat-error>Street Address is required</mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>City</mat-label>
+                <input type="text" matInput formControlName="wcity" required>
+                <mat-error>City is required</mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>State</mat-label>
+                <input type="text" matInput formControlName="wstate" required>
+                <mat-error>State is required</mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Country</mat-label>
+                <input type="text" matInput formControlName="wcountry" required>
+                <mat-error>Country is required</mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Zip Code</mat-label>
+                <input type="number" matInput formControlName="wzipCode" required>
+                <mat-error>ZipCode must be 5 digits</mat-error>
+            </mat-form-field>
+            <br>
+            <br>
+            <div>
+                <button type="button" mat-button matStepperPrevious mat-raised-button color="primary">
+                    <mat-icon>navigate_before</mat-icon>Back
+                </button>&nbsp;
+                <button type="button" mat-button matStepperNext mat-raised-button color="primary">Next<mat-icon>
+                        navigate_next
+                    </mat-icon></button>
+            </div>
+        </mat-step>
+
+        <mat-step formGroupName="4" [stepControl]="empArray?.get([4])">
+            <ng-template matStepLabel>
+                <p>Edit your Job Details
+                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="add fas fa-laptop-code"></i></p>
+            </ng-template>
+            <br>
+            <mat-radio-group formControlName="isManager" required>
+                <mat-radio-button *ngFor="let eM of empMan" [value]="eM.value">
+                    {{eM.name}}
+                </mat-radio-button>
+            </mat-radio-group>
+            <br>
+            <br>
+            <mat-form-field>
+                <mat-label>Job Title</mat-label>
+                <mat-select formControlName="jobTitle" required>
+                    <mat-option matInput *ngFor="let job of jobs" [value]="job.value">
+                        {{job.name}}
+                    </mat-option>
+                </mat-select>
+                <mat-error>Select Job Title</mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Department</mat-label>
+                <mat-select formControlName="dept" required>
+                    <mat-option matInput *ngFor="let dept of depts" [value]="dept.value">
+                        {{dept.name}}
+                    </mat-option>
+                </mat-select>
+                <mat-error>Select Department</mat-error>
+            </mat-form-field>
+            <br>
+            <br>
+            Select Salary : <mat-slider formControlName="salary" [displayWith]="formatSalary" thumbLabel
+                tickInterval="1000" min="0" max="150000">
+            </mat-slider>
+            <br>
+            <br>
+            <mat-form-field>
+                <mat-label>Report To</mat-label>
+                <input type="number" matInput formControlName="reportTo" required>
+                <mat-error>Report To is required</mat-error>
+            </mat-form-field>
+            <br>
+            <br>
+            <div>
+                <button type="button" mat-button matStepperPrevious mat-raised-button color="primary">
+                    <mat-icon>navigate_before</mat-icon>Back
+                </button>&nbsp;
+                <button type="button" mat-button matStepperNext mat-raised-button color="primary">Next<mat-icon>
+                        navigate_next
+                    </mat-icon></button>
+            </div>
+        </mat-step>
+
+        <mat-step>
+            <ng-template matStepLabel>
+                <p>Confirm your updated information
+                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="add fas fa-tasks"></i></p>
+            </ng-template>
+            <br>
+            <br>
+            <div>
+                <!-- <mat-accordion>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <div *ngIf="{{empArray?.get([0]).get('gender').value}} == 1">
+                                    <i class="fas fa-male"></i>
+                                </div>
+                                <div *ngIf="{{empArray?.get([0]).get('gender').value}} == 0">
+                                    <i class="fas fa-female"></i>
+                                </div>
+                                <div *ngIf="{{empArray?.get([0]).get('gender').value}} == 2">
+                                    <i class="fas fa-transgender"></i>
+                                </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{empArray?.get([0]).get('name').value}}
+                                &nbsp;&nbsp; | &nbsp;&nbsp;
+                                <div *ngIf="{{empArray?.get([4]).get('isManager').value}} == 0">
+                                    Employee
+                                </div>
+                                <div *ngIf="{{empArray?.get([4]).get('isManager').value}} == 1">
+                                    Manager
+                                </div>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-user-tag"></i>&nbsp;&nbsp;&nbsp;{{empDb.eId}}
+                            </mat-panel-title>
+                            <mat-panel-description>
+                                <i class="fas fa-envelope"></i>&nbsp;&nbsp;{{empArray?.get([1]).get('email').value}}
+                                &nbsp;&nbsp;<i
+                                    class="fas fa-mobile"></i>&nbsp;&nbsp;{{empArray?.get([1]).get('contactNo').value}}
+                                &nbsp;&nbsp;<i
+                                    class="fas fa-briefcase"></i>&nbsp;&nbsp;{{empArray?.get([4]).get('dept').value}}
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <div>
+                            <i class="fas fa-birthday-cake"></i>&nbsp;&nbsp;{{empArray?.get([0]).get('age').value}} yrs
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <i class="fas fa-id-card"></i>&nbsp;&nbsp;{{empArray?.get([1]).get('ssn').value}}
+                            <br>
+                            <br>
+                            <i class="fas fa-home"></i>&nbsp;&nbsp;
+                            {{empArray?.get([2]).get('hstreetAddress').value}},&nbsp;
+                            {{empArray?.get([2]).get('hcity').value}},&nbsp;
+                            {{empArray?.get([2]).get('hstate').value}},&nbsp;
+                            {{empArray?.get([2]).get('hcountry').value}}&nbsp;
+                            [{{empArray?.get([2]).get('hzipCode').value}}]
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <i class="fas fa-building"></i>&nbsp;&nbsp;
+                            {{empArray?.get([3]).get('wstreetAddress').value}},&nbsp;
+                            {{empArray?.get([3]).get('wcity').value}},&nbsp;
+                            {{empArray?.get([3]).get('wstate').value}},&nbsp;
+                            {{empArray?.get([3]).get('wcountry').value}}&nbsp;
+                            [{{empArray?.get([3]).get('wzipCode').value}}]
+                            <br>
+                            <br>
+                            <i class="fas fa-pen-nib"></i>&nbsp;&nbsp;{{empArray?.get([4]).get('reportTo').value}}
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <i class="fas fa-user-tie"></i>&nbsp;&nbsp;{{empArray?.get([4]).get('jobTitle').value}}
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <i class="fas fa-dollar-sign"></i>&nbsp;&nbsp;{{empArray?.get([4]).get('salary').value}}.00
+                        </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+                <br><br> -->
+                <button type="submit" mat-button mat-raised-button color="primary">
+                    <mat-icon>done_all</mat-icon> Update Employee
+                </button>&nbsp;
+                <button type="button" mat-button mat-raised-button color="primary"
+                    (click)="linearVerticalStepper.reset()">
+                    <mat-icon>clear</mat-icon> Clear all
+                </button>
+            </div>
+        </mat-step>
+    </mat-vertical-stepper>
+</form>

@@ -1,0 +1,73 @@
+<div *ngFor="let emp of emps">
+  <mat-accordion>
+    <mat-expansion-panel style="color: white; background: black">
+      <mat-expansion-panel-header style="color: white; background: black">
+        <mat-panel-title style="color: white; background: black">
+          <div *ngIf="emp.gender == 'MALE'">
+            <i class="fas fa-male"></i>
+          </div>
+          <div *ngIf="emp.gender == 'FEMALE'">
+            <i class="fas fa-female"></i>
+          </div>
+          <div *ngIf="emp.gender == 'OTHER'">
+            <i class="fas fa-transgender"></i>
+          </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{emp.name}}
+          &nbsp;&nbsp; | &nbsp;&nbsp;
+          <div *ngIf="emp.isManager == 0">
+            Employee
+          </div>
+          <div *ngIf="emp.isManager == 1">
+            Manager
+          </div>
+          &nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-user-tag"></i>&nbsp;&nbsp;&nbsp;{{emp.eId}}
+        </mat-panel-title>
+        <mat-panel-description style="color: white; background: black">
+          <i class="fas fa-envelope"></i>&nbsp;&nbsp;{{emp.email}}
+          &nbsp;&nbsp;<i class="fas fa-mobile"></i>&nbsp;&nbsp;{{emp.contactNo}}
+          &nbsp;&nbsp;<i class="fas fa-briefcase"></i>&nbsp;&nbsp;{{emp.dept}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div style="color: white; background: black">
+        <i class="fas fa-birthday-cake"></i>&nbsp;&nbsp;{{emp.age}} yrs
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <i class="fas fa-id-card"></i>&nbsp;&nbsp;{{emp.ssn}}
+        <br>
+        <br>
+        <i class="fas fa-home"></i>&nbsp;&nbsp;
+        {{emp.aHome.streetAddress}},&nbsp;
+        {{emp.aHome.city}},&nbsp;
+        {{emp.aHome.state}},&nbsp;
+        {{emp.aHome.country}}&nbsp;
+        [{{emp.aHome.zipCode}}]
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <i class="fas fa-building"></i>&nbsp;&nbsp;
+        {{emp.aWork.streetAddress}},&nbsp;
+        {{emp.aWork.city}},&nbsp;
+        {{emp.aWork.state}},&nbsp;
+        {{emp.aWork.country}}&nbsp;
+        [{{emp.aWork.zipCode}}]
+        <br>
+        <br>
+        <i class="fas fa-pen-nib"></i>&nbsp;&nbsp;{{emp.reportTo}}
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <i class="fas fa-user-tie"></i>&nbsp;&nbsp;{{emp.jobTitle}}
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <i class="fas fa-dollar-sign"></i>&nbsp;&nbsp;{{emp.salary}}.00
+      </div>
+      <br>
+      <button (click)="updateEmp(emp.eId,emp.name)" mat-button mat-raised-button color="primary">
+        <mat-icon>update</mat-icon> Update Employee
+      </button>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <button (click)="deleteEmp(emp.eId)" mat-button mat-raised-button color="primary">
+        <mat-icon>delete_outline</mat-icon> Delete Employee
+      </button>
+    </mat-expansion-panel>
+    <hr>
+  </mat-accordion>
+</div>
+<div *ngIf="emp">
+  <hr>
+  <h3>( {{emp.eId}} ) {{emp.name | uppercase}} Details</h3>
+  <hr>
+</div>
