@@ -229,18 +229,7 @@
                                 </div>
                                 <div *ngIf="{{empArray?.get([0]).get('gender').value}} == 2">
                                     <i class="fas fa-transgender"></i>
-                                </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{empArray?.get([0]).get('name').value}}
-                                &nbsp;&nbsp; | &nbsp;&nbsp;
-                                <div *ngIf="{{empArray?.get([4]).get('isManager').value}} == 0">
-                                    Employee
-                                </div>
-                                <div *ngIf="{{empArray?.get([4]).get('isManager').value}} == 1">
-                                    Manager
-                                </div>
-                                &nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-user-tag"></i>&nbsp;&nbsp;&nbsp;{{empDb.eId}}
-                            </mat-panel-title>
-                            <mat-panel-description>
-                                <i class="fas fa-envelope"></i>&nbsp;&nbsp;{{empArray?.get([1]).get('email').value}}
+                             nbsp;{{empArray?.get([1]).get('email').value}}
                                 &nbsp;&nbsp;<i
                                     class="fas fa-mobile"></i>&nbsp;&nbsp;{{empArray?.get([1]).get('contactNo').value}}
                                 &nbsp;&nbsp;<i
