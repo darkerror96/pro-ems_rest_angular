@@ -8,7 +8,9 @@ Complex level of a Angular Web Application integrated with RESTful APIs to conne
 
 For all beginners/semi-pro, this is perfect repository to start-off with an angular web application describing Employee Management System consuming RESTful APIs. 
 
-NOTE: - Once you run the application, you would be able to see the UI pages for Creating, Updating, Searching and Deleting Employees but it won't show any Employee data. You still need to deploy the EMS REST API Service which is being consumed by this application. I have already uploaded EMS REST API Service as an individual repository https://github.com/darkerror96/semi-ems_rest_api. Clone or Download the repository from given link and deploy it in any Java IDE. Once deployed, refresh the EMS Angular Web Application to populate the Employees records.
+## NOTE
+
+Once you run the application, you would be able to see the UI pages for Creating, Updating, Searching and Deleting Employees but it won't show any Employee data. You still need to deploy the EMS REST API Service which is being consumed by this application. I have already uploaded EMS REST API Service as an individual repository https://github.com/darkerror96/semi-ems_rest_api. Clone or Download the repository from given link and deploy it in any Java IDE. Once deployed, refresh the EMS Angular Web Application to populate the Employees records.
 
 ## Development server
 
