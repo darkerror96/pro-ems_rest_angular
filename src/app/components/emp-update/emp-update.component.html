@@ -228,14 +228,7 @@
                                     <i class="fas fa-female"></i>
                                 </div>
                                 <div *ngIf="{{empArray?.get([0]).get('gender').value}} == 2">
-                            
-                            <i class="fas fa-home"></i>&nbsp;&nbsp;
-                            {{empArray?.get([2]).get('hstreetAddress').value}},&nbsp;
-                            {{empArray?.get([2]).get('hcity').value}},&nbsp;
-                            {{empArray?.get([2]).get('hstate').value}},&nbsp;
-                            {{empArray?.get([2]).get('hcountry').value}}&nbsp;
-                       ').value}},&nbsp;
-                            {{empArray?.get([3]).get('wstate').value}},&nbsp;
+                       ).get('wstate').value}},&nbsp;
                             {{empArray?.get([3]).get('wcountry').value}}&nbsp;
                             [{{empArray?.get([3]).get('wzipCode').value}}]
                             <br>
