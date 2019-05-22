@@ -1,10 +1,10 @@
 # EMS AngulaRest
 
-UseCase: - An Employee Management System is designed to simplify the process of record maintenance of employees in an organisation. It helps in managing the information of employees for HR functions. In general, EMS is a part of a comprehensive Human Resource Management System. Most modern companies use computers to collect this information, making their system more accurate and problem-free. A database is often used to collect the information required.
+UseCase: - An Employee Management System is designed to simplify the process of record maintenance of employees in an organization. It helps in managing the information of employees for HR functions. In general, EMS is a part of a comprehensive Human Resource Management System. Most modern companies use computers to collect this information, making their system more accurate and problem-free. A database is often used to collect the information required.
 
 Employee Management System as a Modern Web Application using Angular 7 and consuming RESTful APIs. I have used Visual Studio Code 1.34.0 as an IDE.
 
-Complex level of a Angular Web Application integrated with RESTful APIs to connect to backend database.
+Complex level of an Angular Web Application integrated with RESTful APIs to connect to backend database.
 
 For all beginners/semi-pro, this is perfect repository to start-off with an angular web application describing Employee Management System consuming RESTful APIs. 
 
